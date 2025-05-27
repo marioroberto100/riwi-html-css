@@ -1,0 +1,160 @@
+* {
+    font-family: "Playwrite HU", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+    margin: 0;
+
+}
+
+:root {
+    /* colores principales */
+    --principal: #ff6f00;
+    --secundario: #ffa040;
+
+    /* colores neutros */
+    --fondo: #e0e0e0;
+    --texto: #333333;
+    --parrafo: #555555;
+
+    /* extras */
+    --acento: #ffcc80;
+    --blanco: #ffffff;
+    --negro: #000000;
+
+}
+h1 {
+    color: var(--principal); 
+}
+h2{
+    color: var(--principal);
+}
+h3 {
+     color:var(--secundario) ;
+}
+
+body {
+    background-color: var(--fondo);
+}
+
+/* navegacion */
+
+nav {
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px -35px;
+
+}
+
+nav a {
+    color: var(--principal);
+    text-decoration: none;
+    padding: 10px;
+    font-size: 22px;
+
+
+}
+
+/* section1 */
+#about-me{
+    margin: 1.5rem;
+}
+#about-me img {
+    margin: 100px;
+    width: 200px;
+    height: auto;
+    border-radius: 10%;
+
+}
+
+#about-me>div {
+    /* flex: 1; */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#about-me>div>div {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    color: var(--principal);
+    
+}
+
+#about-me>div>div p{
+   color: var(--negro);
+}
+#about-me>div>div li{
+    color: var(--negro);
+}
+
+/* section2 */
+#projects{
+    margin: 1.5rem;
+}
+#projects>div{
+    border: 2px solid var(--acento); 
+    padding: 30px;
+    display:flex;
+    align-items: center;
+}
+
+#projects div>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;   
+    margin: 50px;
+    gap: 50px;
+}
+#projects table{
+    width: 7;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 20px  auto;
+
+}
+
+    
+
+#projects table th {
+    color: var(--principal);
+    border: 1px solid var(--secundario);
+}
+#projects table td{
+    color: var(--texto);
+    border: 1px solid var(--secundario);
+}
+
+#projects table td a{
+    color:rgb(104, 17, 155);
+    text-decoration: none;
+}
+    
+/* Section contact me */
+#contact-me {
+    margin: 1.5rem;
+    
+}
+#contact-me>div{
+    gap: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+
+footer{
+    background-color: var(--principal);
+    color: var(--blanco);
+    text-align: center;
+    padding: 20px;
+    position: static;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+}
