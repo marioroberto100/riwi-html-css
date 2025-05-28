@@ -113,7 +113,7 @@ nav a {
     gap: 50px;
 }
 #projects table{
-    width: 7;
+    width: 80%;
     text-align: center;
     border-collapse: collapse;
     margin: 20px  auto;
