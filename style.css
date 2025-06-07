@@ -1,10 +1,9 @@
 * {
     font-family: "Playwrite HU", cursive;
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
     font-style: normal;
     margin: 0;
-
+    box-sizing: border-box;
 }
 
 :root {
@@ -21,7 +20,10 @@
     --acento: #ffcc80;
     --blanco: #ffffff;
     --negro: #000000;
+}
 
+body {
+    background-color: var(--fondo);
 }
 
 h1 {
@@ -36,13 +38,7 @@ h3 {
     color: var(--secundario);
 }
 
-body {
-    background-color: var(--fondo);
-    
-}
-
-/* navegacion */
-
+/* ========== Navegación ========== */
 nav {
     color: white;
     position: fixed;
@@ -51,8 +47,10 @@ nav {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin: 20px -35px;
-
+    background-color: var(--blanco);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
 
 nav a {
@@ -60,24 +58,22 @@ nav a {
     text-decoration: none;
     padding: 10px;
     font-size: 22px;
-
-
 }
 
-/* section1 */
+/* ========== About Me ========== */
 #about-me {
-    margin: 1.5rem;
+    margin: 6rem 1.5rem 1.5rem;
     opacity: 0;
     animation: fadeInsection 2s ease forwards;
-    
 }
+
 @keyframes fadeInsection {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #about-me img {
@@ -85,45 +81,38 @@ nav a {
     width: 200px;
     height: auto;
     border-radius: 10%;
-
 }
 
-#about-me>div {
-    /* flex: 1; */
+#about-me > div {
     display: flex;
     justify-content: space-around;
-
 }
 
-#about-me>div>div {
+#about-me > div > div {
     display: flex;
     flex-direction: column;
     align-self: center;
     color: var(--principal);
-
 }
 
-#about-me>div>div p {
+#about-me > div > div p,
+#about-me > div > div li {
     color: var(--negro);
 }
 
-#about-me>div>div li {
-    color: var(--negro);
-}
-
-/* section2 */
+/* ========== Projects ========== */
 #projects {
     margin: 1.5rem;
 }
 
-#projects>div {
+#projects > div {
     border: 2px solid var(--acento);
     padding: 30px;
     display: flex;
     align-items: center;
 }
 
-#projects div>div {
+#projects div > div {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -131,15 +120,17 @@ nav a {
     gap: 50px;
 }
 
+#projects img {
+    max-width: 100%;
+    height: auto;
+}
+
 #projects table {
     width: 80%;
     text-align: center;
     border-collapse: collapse;
     margin: 20px auto;
-
 }
-
-
 
 #projects table th {
     color: var(--principal);
@@ -156,18 +147,28 @@ nav a {
     text-decoration: none;
 }
 
-/* Section contact me */
+
 #contact-me {
     margin: 1.5rem;
-
 }
 
-#contact-me>div {
+#contact-me > div {
     gap: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: end;
 }
+
+form input,
+form textarea,
+form button {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid var(--secundario);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 
 footer {
     background-color: var(--principal);
@@ -178,4 +179,68 @@ footer {
     bottom: 0;
     width: 100%;
     margin: 0;
+}
+
+ /* RESPONSIVE  */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        position: static;
+        margin: 0;
+    }
+
+    nav a {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    section {
+        padding: 0 1rem;
+    }
+
+    #about-me > div,
+    #contact-me > div,
+    #projects > div {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #about-me img {
+        margin: 20px 0;
+        width: 150px;
+    }
+
+    #about-me > div > div,
+    #projects div > div {
+        margin: 10px 0;
+        gap: 20px;
+    }
+
+    #projects table,
+    #contact-me table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    form input,
+    form textarea,
+    form button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    p, li {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
